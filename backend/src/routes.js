@@ -62,21 +62,21 @@ routes.post('/manage_tasks/:id', async (request, response) => {
 });
 
 //concluir contagem do tempo (T01)
-routes.post('/manage_tasks/:id', async (request, response) => {
+routes.post('/manage_tasks_finish/:id', async (request, response) => {
     const {id} = request.params; //id da task em questao
 
     let horario_start = new Date(); //date que vai receber o TIME inicial que vem do banco
     let horario_finish = new Date(); //date que vai receber o TIME atual que o usuário pausou a tarefa
     
     const horario_string_incio = await connection('task').select('tempo_inicio').where('id', id).first(); //STRING com horário inicial
-    console.log(horario_string_incio); //teste
     const tempo_executado = await connection('task').select('tempo_executado').where('id', id).first(); //STRING com tempo de horário executado
+    console.log(horario_string_incio); //teste
+    console.log(horario_string_finish); //teste
     if(tempo_executado == 0){
         const horario_string_finish = horario_finish.getHours().toString() + ':' + horario_finish.getMinutes().toString() + ':' + horario_finish.getSeconds().toString(); //STRING com horário pausado
         const value_start = horario_string_incio.tempo_inicio.split(':'); // SPLITANDO horario_string_inicio em um vetor com 3 posições [HH, MM, SS]
         const value_finish = horario_string_finish.split(':'); // SPLITANDO horario_string_pause em um vetor com 3 posições [HH, MM, SS]
     
-        console.log(horario_string_finish); //teste
 
         horario_start.setHours(value_start[0], value_start[1], value_start[2], 0); // transformando minha string em date para fazer a conta 
         horario_finish.setHours(value_finish[0], value_finish[1], value_finish[2], 0); // transformando minha string em date para fazer a conta
