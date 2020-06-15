@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,700&display=swap');
+
 h1 {
     color: #ffffff;
 }
@@ -17,17 +19,54 @@ h1 {
 }
 
 .button_header {
-    width: 10%;
-    height: 60px;
-    background: #87CEFA;
+    border: 0;
+    margin: 2px;
+    padding: 16px;
+    background-color: #2e3140;
+    color: white;
+    font-weight: 700;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    transition: 2s ease;
+}
+
+.button {
+    width: 5%;
+    height: 37px;
+    background-color: #2e3140;
     border: 0;
     color: #FFF;
     font-weight: 700; /*deixa em negrito*/
-    display: contents; /*deixa um do lado do outro*/
-    
-    
-    
-    font-size: 18;
-    line-height: 60px;
-    transition: filter 0.2s; /*quando o filtro mudar vai mudar em 0.2 segundos p fazer a alteração*/
+}
+
+.titulo_principal {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    color: #2e3140;
+}
+
+.class_dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.botoes {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 5%;
+}
+
+.escolha_botoes{
+    width: 10%;
+    height: 50px;
+    background-color: #2e3140;
+    border: 0;
+    color: #FFF;
+    font-weight: 700; /*deixa em negrito*/
+    margin-left: 5%;
 }

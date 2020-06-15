@@ -110,6 +110,7 @@ routes.post('/manage_tasks/finish/:id', async (request, response) => {
 //listagem para o dropdown (T01)
 routes.get('/manage_tasks', async (request, response) => {
     const task = await connection('task').select('*');
+    console.log(task)
     return response.json(task);
 });
 
